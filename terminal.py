@@ -88,11 +88,10 @@ class Terminal:
 
     # Проверка активных заказов
     def check_orders(self):
-        print('\nГотовые заказы: \n')
         for each_order in range(len(self.orders)):
-            pizza = self.orders[each_order]
-            if pizza.readiness is True:
-                self.ready_orders.append(pizza)
+            current_order = self.orders[each_order]
+            if current_order.readiness is True:
+                self.ready_orders.append(current_order)
                 self.orders.pop(each_order)
 
         print(f'В процессе приготовления: {len(self.orders)}\n')
