@@ -38,3 +38,4 @@ class Salesman:
     def seller_fio(self, fio):
         self.verify_fio(fio)
         self.fio = fio
+        
