@@ -5,6 +5,8 @@ class Salesman:
 
     # Инициализирую продавца
     def __init__(self, fio):
+        # Проверяем продавца в момент инициализации
+        self.verify_fio(fio)
         self.fio = fio
 
     # Верификация проверки имени, фамилии, отчества
@@ -23,5 +25,19 @@ class Salesman:
             if len(data.strip(letters)) != 0:
                 raise TypeError('В ФИО можно использовать только буквы и дефис')
 
+    # Замена Данных ФИО если меняется продавец
+    @property
+    def seller_fio(self):
+        return self.fio
+
+    @seller_fio.setter
+    def seller_fio(self, fio):
+        self.verify_fio(fio)
+        self.fio = fio
+
 
 salesman = Salesman('Марина Сергеевна Петрова')
+print(salesman.fio)
+# Если хотим поменять продавца во время смены или до смены.
+salesman.seller_fio = 'Пушкин Роман Сергеевич'
+print(salesman.seller_fio)
