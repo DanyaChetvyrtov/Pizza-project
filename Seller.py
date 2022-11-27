@@ -38,22 +38,3 @@ class Salesman:
     def seller_fio(self, fio):
         self.verify_fio(fio)
         self.fio = fio
-
-    # Открываем кассу
-    def open_cash(self):
-        return f'Кассу открыла/л: {self.fio} {Salesman.time_open}.'
-
-    # Закрываем кассу
-    def close_cash(self):
-        return f'Кассу закрыла/л: {self.fio} {Salesman.time_close}.'
-
-
-salesman = Salesman('Марина Сергеевна Петрова')
-print(salesman.fio)
-# Открываем кассу
-print(salesman.open_cash())
-# Если хотим поменять продавца во время смены или до смены.
-salesman.seller_fio = 'Пушкин Роман Сергеевич'
-print(salesman.seller_fio)
-# Закрываем кассу
-print(salesman.close_cash())

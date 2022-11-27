@@ -15,7 +15,8 @@ current_terminal.add_dish_to_menu(PizzaSeafood())
 
 
 # Включаем терминал
-terminal_activation = input("Хотите открыть смену?(да/нет)").lower().strip()
+terminal_activation = input("Хотите открыть смену?(да/нет)\n"
+                            "->: ").lower().strip()
 while True:
     if terminal_activation == 'да':
         password = input("Введите пароль: ")
@@ -30,10 +31,11 @@ while True:
         break
     else:
         print('Неизвестная команда.')
-        terminal_activation = input("Хотите открыть смену?(да/нет)").lower().strip()
+        terminal_activation = input("Хотите открыть смену?(да/нет)\n"
+                                    "->: ").lower().strip()
 
 while current_terminal.activ:
-    sleep(1)
+    sleep(2)
     current_terminal.print_menu()
     seller_choose = input("1. Создать новый заказ.\n"
                           "2. Проверить активные заказы. \n\n"

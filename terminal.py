@@ -51,7 +51,7 @@ class Terminal:
                 os.mkdir(path)
             # Записываем время закрытия.
             closing_time = datetime.datetime.now()
-            # Записываем всю информацию.
+            # Записываем всю информацию в файл.
             with open(path + closing_time.strftime('%d.%m.%y') + '.txt', 'a+', encoding='utf-8') as file_with_checks:
                 day_info = f'{closing_time.strftime("%d.%m.%Y")}\n' \
                            f'Ответственный продавец: {self.current_seller_info}\n\n' \
