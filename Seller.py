@@ -1,7 +1,11 @@
+import datetime
 import re
 
 
 class Salesman:
+    # Статические свойства
+    time_open = datetime.datetime.now().strftime("%d-%m-%y %H:%M:%S")
+    time_close = datetime.datetime.now().strftime("%d-%m-%y %H:%M:%S")
 
     # Инициализирую продавца
     def __init__(self, fio):
@@ -36,8 +40,8 @@ class Salesman:
         self.fio = fio
 
 
-salesman = Salesman('Марина Сергеевна Петрова')
-print(salesman.fio)
-# Если хотим поменять продавца во время смены или до смены.
-salesman.seller_fio = 'Пушкин Роман Сергеевич'
-print(salesman.seller_fio)
+# salesman = Salesman('Марина Сергеевна Петрова')
+# print(salesman.fio)
+# # Если хотим поменять продавца во время смены или до смены.
+# salesman.seller_fio = 'Пушкин Роман Сергеевич'
+# print(salesman.seller_fio)
