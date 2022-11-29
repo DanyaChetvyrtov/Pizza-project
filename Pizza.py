@@ -25,6 +25,18 @@ class Pizza:
                                 "Сыр Чеддер": 90, "Сыр Пармезан": 90,
                                 "Шампиньоны Свежие": 70, "Опята": 70,
                                 }
+        # проверка на наличие в списке ингредиентов
+    def check_filling(self, filling):
+
+        if filling in self.possible_doping.keys():
+            # добавление нового ингредиента в список
+            self.filling.append(filling)
+            # повышение цены на каждый новый ингредиент
+            self.new_price += self.possible_doping[filling]
+            print(f"\nНовый состав пиццы {self.name}: {self.print_list_composition(self.filling)} \n")
+        else:
+            print('У нас нет такой добавки')
+
 
     # метод добавление нового ингредиента
     def add_filling(self):
@@ -42,14 +54,8 @@ class Pizza:
                                 "->: ").title().strip()
 
                 # проверка на наличие в списке ингредиентов
-                if filling in self.possible_doping.keys():
-                    # добавление нового ингредиента в список
-                    self.filling.append(filling)
-                    # повышение цены на каждый новый ингредиент
-                    self.new_price += self.possible_doping[filling]
-                    print(f"\nНовый состав пиццы {self.name}: {self.print_list_composition(self.filling)} \n")
-                else:
-                    print('У нас нет такой добавки')
+                self.check_filling(filling)
+
                 res = input("\nХотите добавить новый ингредиент в пиццу? Цена будет изменена. да/нет\n"
                             "->: ").lower().strip()
             else:
@@ -101,7 +107,6 @@ class Pizza:
     def print_list(self, list):
         # количество элементов для вывода в строку
         n = 3
-
         h = []
         l = ""
         m = []
